@@ -12,6 +12,37 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import NavigationLink from './navbar';
 
+const navs = [
+    {
+        to: '/about',
+        pageName: 'Haqqımızda'
+    },
+    {
+        to: '/xammal',
+        pageName: 'Xammal'
+    },
+    {
+        to: '/mehsullar',
+        pageName: 'Məhsullar'
+    },
+    {
+        to: '/catdirilma',
+        pageName: 'Çatdırılma'
+    },
+    {
+        to: '/istehsal-prosesi',
+        pageName: 'İstehsal prosesi'
+    },
+    {
+        to: '/qalereya',
+        pageName: 'Qalereya'
+    },
+    {
+        to: '/elaqe',
+        pageName: 'Əlaqə'
+    },
+]
+
 function Header() {
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -27,7 +58,9 @@ function Header() {
 
 
     return (
-        <AppBar position="static">
+        <AppBar position="sticky" sx={{
+            backgroundColor: "white"
+        }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters >
                     <Grid container sx={{ justifyContent: { xs: 'space-between', md: 'flex-start' }, padding: '20px 0' }}>
@@ -40,14 +73,14 @@ function Header() {
                                 </Box>
                             </Link>
                         </Grid>
-                        <Grid item xs={2} sx={{ maxWidth: 50, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+                        <Grid item xs={2} sx={{ maxWidth: 50, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end', alignItems: 'center' }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 onClick={handleOpenNavMenu}
-                                color="inherit"
+                                sx={{ color: 'black' }}
                             >
                                 <MenuIcon />
                             </IconButton>
@@ -75,27 +108,15 @@ function Header() {
                                         textDecoration: 'none'
                                     }
                                 }}>
-                                    <MenuItem>
-                                        <NavigationLink to='/about' pageName='Haqqımızda' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='Xammal' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='Məhsullar' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='Çatdırılma' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='İstehsal prosesi' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='Qalereya' />
-                                    </MenuItem>
-                                    <MenuItem>
-                                        <NavigationLink to='#' pageName='Əlaqə' />
-                                    </MenuItem>
+                                    {
+                                        navs.map((el) => {
+                                            return (
+                                                <MenuItem key={el.to}>
+                                                    <NavigationLink {...el} />
+                                                </MenuItem>
+                                            )
+                                        })
+                                    }
                                 </MenuList>
                             </Menu>
                         </Grid>
@@ -103,18 +124,16 @@ function Header() {
                             <Stack direction="row" alignItems="center" spacing={3}
                                 sx={{
                                     '& > a': {
-                                        color: 'white',
+                                        color: 'black',
                                         textDecoration: 'none'
                                     }
                                 }}
                             >
-                                <NavigationLink to='/about' pageName='Haqqımızda' />
-                                <NavigationLink to='#' pageName='Xammal' />
-                                <NavigationLink to='#' pageName='Məhsullar' />
-                                <NavigationLink to='#' pageName='Çatdırılma' />
-                                <NavigationLink to='#' pageName='İstehsal prosesi' />
-                                <NavigationLink to='#' pageName='Qalereya' />
-                                <NavigationLink to='#' pageName='Əlaqə' />
+                                {
+                                    navs.map((el) => {
+                                        return (<NavigationLink key={el.to} {...el} />)
+                                    })
+                                }
                             </Stack>
                         </Grid>
                         <Grid item xs={2}>
@@ -127,8 +146,8 @@ function Header() {
                                     // label=""
                                     // onChange={handleChange}
                                     sx={{
-                                        '& *':{
-                                            border:'none'
+                                        '&, & *': {
+                                            border: 'none !important'
                                         }
                                     }}
                                 >

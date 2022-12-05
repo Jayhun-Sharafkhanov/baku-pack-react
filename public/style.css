@@ -1,0 +1,35 @@
+.home_gifttop {
+    position: relative;
+}
+
+.home_gifttop::before {
+    content: "";
+    width: 160px;
+    height: 160px;
+    background-color: rgba(253, 137, 119, 1);
+    position: absolute;
+    border-radius: 50%;
+    left: 70px;
+    top: 60px;
+    z-index: 4;
+}
+
+.home_gifttop::after {
+    content: "";
+    width: 160px;
+    height: 220px;
+    background-color: rgba(110, 182, 193, 1);
+    position: absolute;
+    border-radius: 0 0 75px 0;
+    left: 185px;
+    bottom: 250px;
+    z-index: 4;
+}
+
+.backgroundWithDots {
+    position: relative;
+}
+.backgroundWithDots::after{
+    content: url("./dots.png");
+    position: absolute;
+}

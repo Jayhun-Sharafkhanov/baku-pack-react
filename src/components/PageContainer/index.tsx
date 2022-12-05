@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import Footer from "../Footer";
 import Header from "../Header";
 
@@ -9,7 +10,10 @@ const PageContainer = ({ children }: Props) => {
     return (
         <>
             <Header />
-            <main>
+            {/* <Container maxWidth="xl" style={{ padding: '20px 0' }}>
+                {children}
+            </Container> */}
+            <main >
                 {children}
             </main>
             <Footer />
