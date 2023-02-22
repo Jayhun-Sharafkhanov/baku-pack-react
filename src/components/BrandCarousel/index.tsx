@@ -109,7 +109,7 @@ const BrandCarousel = () => {
             >
                 {items.map(({ src, key }) => <img style={{
                     width: 100,
-                }} src={src} key={key} alt=""/>)}
+                }} src={src} key={key} />)}
             </Carousel>
         </Box>
     )

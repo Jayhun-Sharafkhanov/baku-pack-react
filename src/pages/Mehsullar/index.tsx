@@ -125,8 +125,8 @@ const Mehsullar = () => {
                                             zIndex: -1
                                         }
                                     }}></Box>
-                                    <img src={img1} alt="" style={{ position: 'relative', zIndex: 5, top: -100 }} />
-                                    <img src={img2} alt="" style={{ position: 'relative', zIndex: 5, top: 60, left: 20 }} />
+                                    <img src={img1} style={{ position: 'relative', zIndex: 5, top: -100 }} />
+                                    <img src={img2} style={{ position: 'relative', zIndex: 5, top: 60, left: 20 }} />
                                 </Grid>
                                 <Grid item xs={10} md={6} lg={5} sx={{
                                     margin: {

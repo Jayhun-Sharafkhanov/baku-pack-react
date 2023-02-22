@@ -5,7 +5,6 @@ import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
 import { useContext } from 'react'
 import { AlertContext } from "context/AlertContext";
-import { color } from "@mui/system";
 
 const validationSchema = yup.object({
     fullName: yup
@@ -99,8 +98,7 @@ const ContactForm = ({ sx }: Props) => {
                     />
                 </Stack>
                 <Button type="submit" sx={{
-                    bgcolor: "rgb(211, 88, 35)"
-                    
+                    bgcolor: "rgba(250, 188, 48, 1)"
                 }}>Gonder</Button>
             </form>
         </Box>

@@ -22,7 +22,7 @@ const Home = () => {
 
     useEffect(() => {
         alertNotify({ type: 'info', message: 'Xos gelmisiniz deyerli istifadeci!', timeout: 5000 })
-    }, )
+    }, [])
 
     return (
         <>
@@ -54,7 +54,7 @@ const Home = () => {
                                             height: "200px",
                                             zIndex: 3
                                         }}></div>
-                                        <img src={giftTop} alt="" style={{ position: 'relative', zIndex: 5 , bottom:135}} />
+                                        <img src={giftTop} style={{ position: 'relative', zIndex: 5 }} />
                                     </div>
                                 </Grid>
                                 <Grid item xs={10} md={6} lg={5} sx={{
